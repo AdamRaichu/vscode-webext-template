@@ -29,6 +29,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+      - name: Install Dependencies
+        run: npm i
       - name: Run Init Script
         run: node ./init.js -repo ${{ github.repository }} -pub ${{ inputs.publisher_id }} -name ${{ inputs.extension_id }} -displayname ${{ inputs.extension_name }} -actor ${{ github.actor }} -desc ${{ inputs.description }}
       - name: Save changes

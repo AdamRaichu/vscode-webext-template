@@ -1,10 +1,9 @@
 const fs = require("fs");
-const core = require("@actions/core");
 const argv = require("minimist-lite")(process.argv.slice(2));
 
 fs.readFile("./package.json", "utf", (err, package) => {
   if (err) {
-    core.error(err);
+    console.error(err);
   }
 
   // Replace the package.json fields based on input
