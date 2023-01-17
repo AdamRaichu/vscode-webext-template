@@ -1,3 +1,7 @@
+name: Initiate Repository
+permissions:
+  contents: write
+concurrency: init
 on:
   workflow_dispatch:
     inputs:
@@ -18,8 +22,6 @@ on:
         description: A short description of what your extension does.
         type: string
         required: true
-name: Initiate Repository
-concurrency: init
 jobs:
   init:
     runs-on: ubuntu-latest
