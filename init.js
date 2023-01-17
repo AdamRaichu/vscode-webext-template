@@ -15,7 +15,7 @@ fs.readFile("./package.json", "utf8", (err, package) => {
     .replace("$author_name", argv.actor)
     .replace("$description", argv.desc);
   fs.writeFileSync("./package.json", newPackage, "utf8");
-  fs.unlinkSync("./github/workflows/init.yml");
+  fs.unlinkSync("./.github/workflows/init.yml");
   fs.unlinkSync("./README.md");
   fs.unlinkSync("./init.js");
 });
