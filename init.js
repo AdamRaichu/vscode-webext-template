@@ -1,7 +1,7 @@
 const fs = require("fs");
 const argv = require("minimist-lite")(process.argv.slice(2));
 
-fs.readFile("./package.json", "utf", (err, package) => {
+fs.readFile("./package.json", "utf8", (err, package) => {
   if (err) {
     console.error(err);
   }
