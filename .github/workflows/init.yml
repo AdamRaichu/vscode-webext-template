@@ -34,7 +34,7 @@ jobs:
       - name: Install Dependencies
         run: npm i
       - name: Run Init Script
-        run: node ./init.js -repo ${{ github.repository }} -pub ${{ inputs.publisher_id }} -name ${{ inputs.extension_id }} -displayname ${{ inputs.extension_name }} -actor ${{ github.actor }} -desc ${{ inputs.description }}
+        run: node ./init.js -r ${{ github.repository }} -p ${{ inputs.publisher_id }} -n ${{ inputs.extension_id }} -t "${{ inputs.extension_name }}" -a ${{ github.actor }} -d "${{ inputs.description }}"
       - name: Save changes
         run: |
           git pull

@@ -9,12 +9,12 @@ fs.readFile("./package.json", "utf8", (err, package) => {
 
   // Replace the package.json fields based on input
   const newPackage = package
-    .replace("$extension_name", argv.name)
-    .replace("$publisher_id", argv.pub)
-    .replace("$repo", argv.repo)
-    .replace("$display_name", argv.displayname)
-    .replace("$author_name", argv.actor)
-    .replace("$description", argv.desc);
+    .replace("$extension_name", argv.n)
+    .replace("$publisher_id", argv.p)
+    .replace("$repo", argv.r)
+    .replace("$display_name", argv.t)
+    .replace("$author_name", argv.a)
+    .replace("$description", argv.d);
   fs.writeFileSync("./package.json", newPackage, "utf8");
   fs.unlinkSync("./.github/workflows/init.yml");
   fs.unlinkSync("./README.md");
