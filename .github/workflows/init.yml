@@ -35,6 +35,8 @@ jobs:
         run: npm i
       - name: Run Init Script
         run: node ./init.js -r ${{ github.repository }} -p ${{ inputs.publisher_id }} -n ${{ inputs.extension_id }} -t "${{ inputs.extension_name }}" -a ${{ github.actor }} -d "${{ inputs.description }}"
+      - name: "Run `npm i` again so package-lock.json looks right" 
+        run: npm i
       - name: Save changes
         run: |
           git pull
